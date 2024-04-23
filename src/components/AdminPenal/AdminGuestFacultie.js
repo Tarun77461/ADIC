@@ -143,7 +143,7 @@ const AdminGuestFacultie = () => {
                           </td>
 
                           <td className="text-center">{person.name}</td>
-                          <td className="text-center">
+                          <td className="text-center  redBttt redBttt_tt">
                             {person.qualification}
                           </td>
 

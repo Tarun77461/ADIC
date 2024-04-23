@@ -146,22 +146,21 @@ function AdminSyllabus() {
                           <td className="text-center">
                             {formatDateString(person.entry_date)}
                           </td>
-                          <td className="text-center ">
-                            {person.pdf_url ? (
-                              <a
-                                href={person.pdf_url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                              >
-                                <img
-                                  className="pdfICNIMG"
-                                  src={PDFICN}
-                                  alt="PDF Icon"
-                                />
-                              </a>
-                            ) : (
-                              <span></span>
-                            )}
+                          <td className="text-center">
+                            {person.pdf_url !== null &&
+                              person.pdf_url !== "" && (
+                                <a
+                                  href={person.pdf_url}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                >
+                                  <img
+                                    className="pdfICNIMG"
+                                    src={PDFICN}
+                                    alt="PDF Icon"
+                                  />
+                                </a>
+                              )}
                           </td>
 
                           <td className="text-center">{person.title}</td>

@@ -64,6 +64,9 @@ const EditSyllabus = () => {
       console.log(compiledFormData);
       compiledFormData.append("primary_id", id);
       console.log(id);
+      if (!formData.pdf_url) {
+        compiledFormData.append("pdf_url", null);
+      }
       try {
         const response = await server_post_data(urlForSave, compiledFormData);
         setshowLoaderAdmin(false);
@@ -76,7 +79,7 @@ const EditSyllabus = () => {
           handleSuccessSession(response.data.message, "/admin_syllabus");
           console.log(responseData);
         }
-        if (!formData.pdf) {
+        if (!formData.pdf_url) {
           console.log("PDF data is null after saving");
         }
       } catch (error) {

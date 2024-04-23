@@ -156,7 +156,7 @@ const Editfaculty = () => {
                           name="name_faculty"
                           id="name_faculty"
                           maxLength={100}
-                          onInput={handleAphabetsChange}
+                          // onInput={handleAphabetsChange}
                           placeholder="Enter Title"
                           defaultValue={editFacultiDeatails.name_faculty || ""}
                         />

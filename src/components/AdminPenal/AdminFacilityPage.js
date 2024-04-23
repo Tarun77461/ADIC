@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import AdminHeader from "./AdminHeader";
 import AdminSidebar from "./AdminSidebar";
 import AdminFooter from "./AdminFooter";
+import "../../css/admincss/admindashboard.css";
 import {
   handleError,
   handleSuccess,
@@ -18,12 +19,8 @@ import {
 const AdminFacilityPage = () => {
   // const retrievedAdminId = retrieveData("staff_id");
   const [facilities, setFacilities] = useState([]);
-  const [editRow, setEditRow] = useState(null);
-  const [formData, setFormData] = useState({
-    id: "",
-    name: "",
-    description: "",
-  });
+  const [expandedIds, setExpandedIds] = useState([]);
+
   const [showLoaderAdmin, setshowLoaderAdmin] = useState(false);
 
   useEffect(() => {
@@ -86,7 +83,13 @@ const AdminFacilityPage = () => {
       window.open(link, blank);
     }
   };
-
+  const toggleExpand = (id) => {
+    if (expandedIds.includes(id)) {
+      setExpandedIds(expandedIds.filter((itemId) => itemId !== id));
+    } else {
+      setExpandedIds([...expandedIds, id]);
+    }
+  };
   return (
     <div>
       <div className="app-container app-theme-white body-tabs-shadow fixed-header">
@@ -143,9 +146,10 @@ const AdminFacilityPage = () => {
                             {formatDateString(person.entry_date)}
                           </td>
 
-                          {/* <td className="text-center">{person.Image_url}</td> */}
                           <td className="text-center">{person.title}</td>
-                          <td className="text-center">{person.description}</td>
+                          <td className="text-center redBttt redBttt_tt">
+                            {person.description}
+                          </td>
 
                           <td className="text-center">
                             <div class="dltsvBtn ">
