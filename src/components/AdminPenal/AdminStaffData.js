@@ -180,7 +180,7 @@ const AdminStaffData = () => {
                                   <button
                                     type="button"
                                     tabIndex="0"
-                                    className="dropdown-item"
+                                    className="dropdown-item editBtn"
                                   >
                                     Edit
                                   </button>
@@ -193,7 +193,7 @@ const AdminStaffData = () => {
                                   <button
                                     type="button"
                                     tabIndex="0"
-                                    className="dropdown-item"
+                                    className="dropdown-item dltBtn"
                                   >
                                     Delete
                                   </button>

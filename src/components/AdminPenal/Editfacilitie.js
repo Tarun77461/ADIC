@@ -17,7 +17,7 @@ import {
 } from "../../Common jquery/CommonJquery.js";
 import {
   server_post_data,
-  get_facility,
+  Edit_get_facility,
   update_facilitie_data,
 } from "../../ServiceConnection/serviceconnection.js";
 import { retrieveData } from "../../LocalConnection/LocalConnection.js";
@@ -30,33 +30,28 @@ const Editfacilitie = () => {
 
   const retrievedAdminId = retrieveData("staff_id");
   const [editFacilitieData, seteditFacilitieData] = useState([]);
-  const [error_show, seterror_show] = useState("");
-  const [editorDataMainID, setEditorDatMainID] = useState("0");
-  const [editorData, setEditorData] = useState("");
-  const [dynaicimage, setDynaicimage] = useState(null);
 
   useEffect(() => {
     const start_date = "";
     const end_date = "";
     const flag = "3";
-    const call_id = "";
+    const call_id = id;
     master_data_get(start_date, end_date, flag, call_id);
   }, []);
 
   const master_data_get = async (start_date, end_date, flag, call_id) => {
     setshowLoaderAdmin(true);
     const fd = new FormData();
-    fd.append("admin_id", retrievedAdminId);
+
     fd.append("flag", flag);
-    fd.append("call_id", call_id);
-    await server_post_data(get_facility, fd)
+    fd.append("primary_id", call_id);
+    await server_post_data(Edit_get_facility, fd)
       .then((Response) => {
         if (Response.data.error) {
           handleError(Response.data.message);
         } else {
           console.log(Response.data.message[0]);
           seteditFacilitieData(Response.data.message[0]);
-          setEditorDatMainID(Response.data.message[0]);
         }
 
         setshowLoaderAdmin(false);

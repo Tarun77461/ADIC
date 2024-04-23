@@ -16,7 +16,7 @@ import {
 } from "../../Common jquery/CommonJquery.js";
 import {
   server_post_data,
-  guest_faculty,
+  Edit_get_guest_faculty,
   update_GuestFaculity_data,
 } from "../../ServiceConnection/serviceconnection.js";
 import { useParams } from "react-router-dom";
@@ -38,25 +38,25 @@ const GuestEdit = () => {
     const start_date = "";
     const end_date = "";
     const flag = "3";
-    const call_id = "";
+    const call_id = id;
     master_data_get(start_date, end_date, flag, call_id);
   }, []);
-
   const master_data_get = async (start_date, end_date, flag, call_id) => {
     setshowLoaderAdmin(true);
     const fd = new FormData();
-    fd.append("admin_id", retrievedAdminId);
+
     fd.append("flag", flag);
-    fd.append("call_id", call_id);
-    await server_post_data(guest_faculty, fd)
+    fd.append("primary_id", call_id);
+    console.log(call_id);
+
+    await server_post_data(Edit_get_guest_faculty, fd)
       .then((Response) => {
-        console.log(Response);
         if (Response.data.error) {
           handleError(Response.data.message);
         } else {
           seteditStaffData(Response.data.message[0]);
+          console.log(Response.data.message);
         }
-
         setshowLoaderAdmin(false);
       })
       .catch((error) => {
@@ -66,38 +66,6 @@ const GuestEdit = () => {
   const handleEditorChange = (event, editor) => {
     setEditorData(editor.getData());
   };
-
-  // const handleSaveChangesdynamic = async (
-  //   form_data,
-  //   update_GuestFaculity_data
-  // ) => {
-  //   let vaild_data = check_vaild_save(form_data);
-  //   seterror_show("");
-
-  //   if (vaild_data) {
-  //     setshowLoaderAdmin(true);
-  //     let fd_from = combiled_form_data(form_data, null);
-  //     fd_from.append("admin_id", retrievedAdminId);
-  //     fd_from.append("main_id", editorDataMainID);
-  //     await server_post_data(update_GuestFaculity_data, fd_from)
-  //       .then((Response) => {
-  //         console.log(Response);
-  //         setshowLoaderAdmin(false);
-  //         if (Response.data.error) {
-  //           handleError(Response.data.message);
-  //         } else {
-  //           handleSuccessSession(
-  //             Response.data.message,
-  //             "/Admin_guest_facuilty"
-  //           );
-  //         }
-  //       })
-  //       .catch((error) => {
-  //         console.log(error);
-  //         setshowLoaderAdmin(false);
-  //       });
-  //   }
-  // };
 
   const handleSaveChangesdynamic = async (formData, urlForSave) => {
     const validData = check_vaild_save(formData);

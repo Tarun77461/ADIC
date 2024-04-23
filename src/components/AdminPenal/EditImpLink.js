@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 import {
   update_implinks_data,
   server_post_data,
-  get_important_links,
+  Edit_get_important_links,
 } from "../../ServiceConnection/serviceconnection.js";
 import { retrieveData } from "../../LocalConnection/LocalConnection.js";
 import { useParams } from "react-router-dom";
@@ -28,28 +28,28 @@ const EditImpLink = () => {
   const retrievedAdminId = retrieveData("staff_id");
   const [dynaicimage, setDynaicimage] = useState(null);
   useEffect(() => {
-    const flag = "1";
-    const call_id = "0";
-    master_data_get(flag, call_id);
+    const start_date = "";
+    const end_date = "";
+    const flag = "3";
+    const call_id = id;
+    master_data_get(start_date, end_date, flag, call_id);
   }, []);
-
   const master_data_get = async (start_date, end_date, flag, call_id) => {
     setshowLoaderAdmin(true);
     const fd = new FormData();
-    fd.append("admin_id", retrievedAdminId);
+
     fd.append("flag", flag);
-    fd.append("call_id", call_id);
-    await server_post_data(get_important_links, fd)
+    fd.append("primary_id", call_id);
+    console.log(call_id);
+
+    await server_post_data(Edit_get_important_links, fd)
       .then((Response) => {
-        console.log(Response);
         if (Response.data.error) {
           handleError(Response.data.message);
         } else {
-          console.log(Response.data.message[0]);
           seteditImplinkData(Response.data.message[0]);
-          //   setEditorDatMainID(Response.data.message[0]);
+          console.log(Response.data.message);
         }
-
         setshowLoaderAdmin(false);
       })
       .catch((error) => {

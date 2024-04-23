@@ -159,7 +159,7 @@ const AdminFacilityPage = () => {
                                 <button
                                   type="button"
                                   tabIndex="0"
-                                  className="dropdown-item"
+                                  className="dropdown-item editBtn"
                                 >
                                   Edit
                                 </button>
@@ -172,7 +172,7 @@ const AdminFacilityPage = () => {
                                 <button
                                   type="button"
                                   tabIndex="0"
-                                  className="dropdown-item"
+                                  className="dropdown-item dltBtn"
                                 >
                                   Delete
                                 </button>

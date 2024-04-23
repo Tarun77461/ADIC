@@ -4,6 +4,7 @@ import AdminHeader from "./AdminHeader";
 import AdminSidebar from "./AdminSidebar";
 import AdminFooter from "./AdminFooter";
 import { useEffect, useState } from "react";
+import LinkICN from "../../assets/link.png";
 import {
   handleError,
   formatDateString,
@@ -140,8 +141,25 @@ function AdminSyllabus() {
                           <td className="text-center">
                             {formatDateString(person.entry_date)}
                           </td>
+                          <td className="text-center">
+                            {person.ImpImageLink ? (
+                              <a
+                                href={person.ImpImageLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                <img
+                                  className="pdfICNIMG"
+                                  src={LinkICN}
+                                  alt="PDF Icon"
+                                />
+                              </a>
+                            ) : (
+                              <span></span>
+                            )}
+                          </td>
 
-                          <td className="text-center">{person.ImpImageLink}</td>
+                          {/* <td className="text-center">{person.ImpImageLink}</td> */}
                           <td className="text-center">{person.title}</td>
 
                           <td className="text-center">

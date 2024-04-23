@@ -91,13 +91,13 @@ function AdminNews() {
           <div className="container mt-5">
             <div className="AddROwaddtxt">
               <div className="addRowbtn">
-                <div className="page-title-actions add_funtion_call">
+                <div className="page-title-actions add_funtion_call addRowbtn">
                   <Link onClick={() => handleLinkClick("/admin_add_news")}>
                     <button
                       type="button"
                       className="btn-shadow mr-3 btn btn-dark"
                     >
-                      <i className="fa fa-plus">&nbsp; Add News</i>
+                      Add News
                     </button>
                   </Link>
                 </div>
@@ -141,7 +141,7 @@ function AdminNews() {
                           <td className="text-center">{person.news_name}</td>
 
                           <td className="text-center">
-                            <div class="dltsvBtn ">
+                            <div class="dltsvBtn">
                               <Link
                                 onClick={() =>
                                   handleLinkClick(
@@ -152,7 +152,7 @@ function AdminNews() {
                                 <button
                                   type="button"
                                   tabIndex="0"
-                                  className="dropdown-item"
+                                  className="dropdown-item editBtn"
                                 >
                                   Edit
                                 </button>
@@ -165,7 +165,7 @@ function AdminNews() {
                                 <button
                                   type="button"
                                   tabIndex="0"
-                                  className="dropdown-item"
+                                  className="dropdown-item dltBtn"
                                 >
                                   Delete
                                 </button>

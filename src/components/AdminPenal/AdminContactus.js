@@ -86,8 +86,8 @@ const AdminContactus = () => {
           <AdminSidebar />
           <div className="container mt-5">
             <div className="AddROwaddtxt">
-              <div className="adEdittxt">
-                <h1>ContactUs</h1>
+              <div className="adEdittxt ">
+                <h1>Contact Us</h1>
               </div>
             </div>
 
@@ -151,10 +151,6 @@ const AdminContactus = () => {
                 </tbody>
               </table>
             </div>
-
-            <Button variant="primary" type="submit">
-              Submit
-            </Button>
           </div>
         </div>
         <AdminFooter />

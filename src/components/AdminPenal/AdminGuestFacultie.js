@@ -96,13 +96,13 @@ const AdminGuestFacultie = () => {
           <div className="container mt-5">
             <div className="AddROwaddtxt">
               <div className="addRowbtn">
-                <div className="page-title-actions add_funtion_call">
+                <div className="page-title-actions add_funtion_call addRowbtn">
                   <Link onClick={() => handleLinkClick("/admin_facultyAdd")}>
                     <button
                       type="button"
-                      className="btn-shadow mr-3 btn btn-dark"
+                      className="btn-shadow mr-3 btn btn-dark "
                     >
-                      <i className="fa fa-plus">&nbsp; Add Faculty</i>
+                      Add Guest Faculty
                     </button>
                   </Link>
                 </div>
@@ -159,7 +159,7 @@ const AdminGuestFacultie = () => {
                                 <button
                                   type="button"
                                   tabIndex="0"
-                                  className="dropdown-item"
+                                  className="dropdown-item editBtn"
                                 >
                                   Edit
                                 </button>
@@ -172,7 +172,7 @@ const AdminGuestFacultie = () => {
                                 <button
                                   type="button"
                                   tabIndex="0"
-                                  className="dropdown-item"
+                                  className="dropdown-item dltBtn"
                                 >
                                   Delete
                                 </button>

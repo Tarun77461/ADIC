@@ -258,3 +258,14 @@
 .Toastify__toast-icon.Toastify--animate-icon.Toastify__zoom-enter {
   margin-top: 20px;
 }
+.addRowbtn button {
+  background-color: transparent;
+}
+.addRowbtn button:hover {
+  border: 2px solid green;
+}
+
+.pdfICNIMG {
+  height: 27px;
+  width: 25px;
+}

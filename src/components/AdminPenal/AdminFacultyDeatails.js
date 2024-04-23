@@ -99,18 +99,14 @@ const AdminFacultyDetails = () => {
         <AdminSidebar />
         <div className="container mt-5">
           <div className="AddROwaddtxt">
-            <div className="addRowbtn">
-              <div className="page-title-actions add_funtion_call">
-                <Link onClick={() => handleLinkClick("/add_faculty")}>
-                  <button
-                    type="button"
-                    className="btn-shadow mr-3 btn btn-dark"
-                  >
-                    <i className="fa fa-plus">&nbsp; Add Faculty</i>
-                  </button>
-                </Link>
-              </div>
+            <div className="page-title-actions add_funtion_call addRowbtn">
+              <Link onClick={() => handleLinkClick("/add_faculty")}>
+                <button type="button" className="btn-shadow mr-3 btn btn-dark">
+                  Add Faculty
+                </button>
+              </Link>
             </div>
+
             <div className="adEdittxt">
               <h1>Add Faculty</h1>
             </div>
@@ -171,7 +167,7 @@ const AdminFacultyDetails = () => {
                               <button
                                 type="button"
                                 tabIndex="0"
-                                className="dropdown-item"
+                                className="dropdown-item editBtn"
                               >
                                 Edit
                               </button>
@@ -184,7 +180,7 @@ const AdminFacultyDetails = () => {
                               <button
                                 type="button"
                                 tabIndex="0"
-                                className="dropdown-item"
+                                className="dropdown-item dltBtn"
                               >
                                 Delete
                               </button>

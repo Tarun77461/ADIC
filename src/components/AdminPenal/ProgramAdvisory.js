@@ -59,57 +59,6 @@ function ProgramAdvisory() {
       });
   };
 
-  const handleDropdownChange = (event, id) => {
-    const value = event.target.value;
-    if (value === "edit") {
-      setEditRow(id);
-      const member = committeeMembers.find((member) => member.id === id);
-      setFormData({
-        id: id,
-        position: member.position,
-        organization: member.organization,
-        role: member.role,
-      });
-    } else if (value === "delete") {
-      handleDeleteMember(id);
-    }
-  };
-
-  const handleAddMember = () => {
-    setCommitteeMembers([
-      ...committeeMembers,
-      {
-        id: committeeMembers.length + 1,
-        position: "",
-        organization: "",
-        role: "",
-      },
-    ]);
-  };
-
-  const handleDeleteMember = (id) => {
-    const updatedMembers = committeeMembers.filter(
-      (member) => member.id !== id
-    );
-    setCommitteeMembers(updatedMembers);
-  };
-
-  const handleUpdateMember = (id) => {
-    const updatedMembers = committeeMembers.map((member) => {
-      if (member.id === id) {
-        return {
-          ...member,
-          position: formData.position,
-          organization: formData.organization,
-          role: formData.role,
-        };
-      }
-      return member;
-    });
-    setCommitteeMembers(updatedMembers);
-    setEditRow(null);
-    setFormData({ id: "", position: "", organization: "", role: "" });
-  };
   const master_data_action = async (call_id, flag) => {
     try {
       setshowLoaderAdmin(true);
@@ -154,13 +103,13 @@ function ProgramAdvisory() {
           <div className="container mt-5">
             <div className="AddROwaddtxt">
               <div className="addRowbtn">
-                <div className="page-title-actions add_funtion_call">
+                <div className="page-title-actions add_funtion_call addRowbtn">
                   <Link onClick={() => handleLinkClick("/add_program")}>
                     <button
                       type="button"
                       className="btn-shadow mr-3 btn btn-dark"
                     >
-                      <i className="fa fa-plus">&nbsp; Add Program</i>
+                      Add Program
                     </button>
                   </Link>
                 </div>

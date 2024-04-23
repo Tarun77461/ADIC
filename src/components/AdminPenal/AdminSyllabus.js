@@ -1,5 +1,5 @@
 import React from "react";
-
+import PDFICN from "../../assets/pdf.png";
 import AdminHeader from "./AdminHeader";
 import AdminSidebar from "./AdminSidebar";
 import AdminFooter from "./AdminFooter";
@@ -146,16 +146,24 @@ function AdminSyllabus() {
                           <td className="text-center">
                             {formatDateString(person.entry_date)}
                           </td>
-                          <td className="text-center">{person.pdf_url}</td>
-
-                          <td className="text-center">
-                            <img
-                              className="width_height_50px"
-                              src={APL_LINK + getIMGSyllabus + person.pdf_url}
-                              alt={person.Image_url}
-                            ></img>
-                            {person.pdf_url}
+                          <td className="text-center ">
+                            {person.pdf_url ? (
+                              <a
+                                href={person.pdf_url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                <img
+                                  className="pdfICNIMG"
+                                  src={PDFICN}
+                                  alt="PDF Icon"
+                                />
+                              </a>
+                            ) : (
+                              <span></span>
+                            )}
                           </td>
+
                           <td className="text-center">{person.title}</td>
                           <td className="text-center">
                             <div class="dltsvBtn ">

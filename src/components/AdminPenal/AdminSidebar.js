@@ -21,7 +21,7 @@ function AdminSidebar() {
   const location = useLocation();
   const currentUrl = location.pathname;
   const retrievedAdminId = retrieveData("staff_id");
-  const retrievedAdminProfession = retrieveData("admin_profession");
+
   const [editBlogData, seteditBlogData] = useState([]);
   const [showLoaderAdmin, setshowLoaderAdmin] = useState(false);
   const master_data_get = async (start_date, end_date, flag, call_id) => {
@@ -122,8 +122,8 @@ function AdminSidebar() {
       <div class="scrollbar-sidebar ps ps--active-y">
         <div class="app-sidebar__inner">
           <ul class="vertical-nav-menu metismenu">
-            <li className="app-sidebar__heading ">Dashboard</li>
-            <li>
+            {/* <li className="app-sidebar__heading ">Dashboard</li> */}
+            {/* <li>
               <Link
                 onClick={() => handleLinkClick("/admin_dashboard")}
                 className={
@@ -138,8 +138,8 @@ function AdminSidebar() {
                 </div>
                 Dashboard
               </Link>
-            </li>
-            <li className="app-sidebar__heading">Enquiry/Booking</li>
+            </li> */}
+            <li className="app-sidebar__heading">Dashboard</li>
 
             <li>
               <Link
@@ -184,7 +184,7 @@ function AdminSidebar() {
                   {" "}
                   <img src={newsIcn}></img>
                 </div>
-                Amin News
+                News
               </Link>
             </li>
 

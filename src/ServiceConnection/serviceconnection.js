@@ -27,9 +27,18 @@ const get_news = local_server_link_react + "getnews/";
 const get_programe_addvisory = local_server_link_react + "getprog/";
 const get_rti = local_server_link_react + "getrti/";
 const get_gravidational = local_server_link_react + "getred/";
+
 /*---Edit page get Api----*/
+const Edit_get_news = local_server_link_react + "latestnews_details/";
+const Edit_get_faculty_deatails = local_server_link_react + "faculty_details/";
 const Edit_get_staff_data = local_server_link_react + "admin_data/";
 const Edit_get_guest_faculty = local_server_link_react + "guest_details/";
+const Edit_get_coporative = local_server_link_react + "cooperative_details/";
+const Edit_get_facility = local_server_link_react + "facilities_details/";
+const Edit_get_programe_addvisory =
+  local_server_link_react + "program_details/";
+const Edit_get_syllabus = local_server_link_react + "syllabus_details/";
+const Edit_get_important_links = local_server_link_react + "implink_details/";
 /*__insert apis*/
 const insert_news_data = local_server_link_react + "updnews/";
 const insert_GuestFaculity_data = local_server_link_react + "guestinsert/";
@@ -143,4 +152,11 @@ export {
   insert_contact_data,
   Edit_get_staff_data,
   Edit_get_guest_faculty,
+  Edit_get_facility,
+  Edit_get_programe_addvisory,
+  Edit_get_coporative,
+  Edit_get_syllabus,
+  Edit_get_important_links,
+  Edit_get_news,
+  Edit_get_faculty_deatails,
 };

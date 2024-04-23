@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import AdminHeader from "./AdminHeader";
 import AdminSidebar from "./AdminSidebar";
 import AdminFooter from "./AdminFooter";
+import PDFICN from "../../assets/pdf.png";
 import {
   handleError,
   formatDateString,
@@ -84,7 +85,7 @@ const RtiPage = () => {
 
                     <th className="text-center">Entry Date</th>
 
-                    <th className="text-center">Images</th>
+                    <th className="text-center">PDF</th>
 
                     <th className="text-center">Title</th>
                     <th className="text-center">Action</th>
@@ -103,8 +104,24 @@ const RtiPage = () => {
                           <td className="text-center">
                             {formatDateString(person.entry_date)}
                           </td>
+                          <td className="text-center ">
+                            {person.ImpImageLink ? (
+                              <a
+                                href={person.pdf_url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                <img
+                                  className="pdfICNIMG"
+                                  src={PDFICN}
+                                  alt="PDF Icon"
+                                />
+                              </a>
+                            ) : (
+                              <span></span>
+                            )}
+                          </td>
 
-                          <td className="text-center">{person.ImpImageLink}</td>
                           <td className="text-center">{person.title}</td>
 
                           <td className="text-center">

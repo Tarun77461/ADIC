@@ -3,6 +3,7 @@ import { Table, Button, Form } from "react-bootstrap";
 import AdminHeader from "./AdminHeader";
 import AdminSidebar from "./AdminSidebar";
 import AdminFooter from "./AdminFooter";
+import PDFICN from "../../assets/pdf.png";
 import {
   handleError,
   handleSuccess,
@@ -95,19 +96,19 @@ function AdminActs() {
           <div className="container mt-5">
             <div className="AddROwaddtxt">
               <div className="addRowbtn">
-                <div className="page-title-actions add_funtion_call">
+                <div className="page-title-actions add_funtion_call addRowbtn">
                   <Link onClick={() => handleLinkClick("/addd_Acts")}>
                     <button
                       type="button"
                       className="btn-shadow mr-3 btn btn-dark"
                     >
-                      <i className="fa fa-plus">&nbsp; Add Acts</i>
+                      Add Acts
                     </button>
                   </Link>
                 </div>
               </div>
               <div className="adEdittxt">
-                <h1>Add News</h1>
+                <h1>Add Acts</h1>
               </div>
             </div>
             <div className="table-responsive">
@@ -141,7 +142,24 @@ function AdminActs() {
                             {formatDateString(person.entry_date)}
                           </td>
 
-                          <td className="text-center">{person.pdf_url}</td>
+                          {/* <td className="text-center">{person.pdf_url}</td> */}
+                          <td className="text-center ">
+                            {person.pdf_url ? (
+                              <a
+                                href={person.pdf_url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                <img
+                                  className="pdfICNIMG"
+                                  src={PDFICN}
+                                  alt="PDF Icon"
+                                />
+                              </a>
+                            ) : (
+                              <span></span>
+                            )}
+                          </td>
                           <td className="text-center">{person.coapname}</td>
 
                           <td className="text-center">
