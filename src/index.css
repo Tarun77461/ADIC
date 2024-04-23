@@ -1,0 +1,17 @@
+.news {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.pagination {
+  display: flex;
+  justify-content: end;
+}
+.page-link:focus {
+  background-color: var(--primary-color) !important;
+  border: none !important;
+}
+.sideBarrSearch {
+  display: flex;
+  justify-content: end;
+}

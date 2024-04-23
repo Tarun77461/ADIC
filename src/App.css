@@ -1,0 +1,66 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --primary-color: #518db0;
+  --secondary-color: #faf9f6;
+
+  /* Background color */
+  --primary-bg: #ffffff;
+  --secondary-bg: #f6f5f5;
+  --light-bg: #d9d9d9;
+  --blue-bg: #1453f3;
+  --lightBlue-bg: #0d99ff;
+  --lightNavy-bg: #0794c9;
+  --grey-bg: #666666;
+  --lightGreen-bg: #dbffcc;
+  --lightRed-bg: #ff000096;
+  --red-bg: #ff1212;
+  --lightBlack-bg: #464444;
+  --lightGrey-bg: #efefef;
+  --greenpistachio-bg: #e6ffdd;
+  --pending-bg: #ffd258;
+  --green-bg: #509d30;
+  --darkGreen-bg: #448d25;
+  --fadeGreen-bg: #7fd4ac;
+  --fadeBrown-bg: #cbc1a3;
+  --lightPink-bg: #e2b39e;
+  --pink-bg: #f6989b;
+  --pale-yellow-bg: #f0c868;
+
+  /* Text colors */
+  --primary-text: #000000;
+
+  --secondary-text: #333333;
+  --light-black: #212121;
+  --white-text: #ffffff;
+  --light-text: #666666;
+  --fade-text: #999999;
+  --red-text: #de1c1c;
+  --grey-text: #7a7a7a;
+  --light-grey-text: #7a7a7a;
+  --brown-text: #552b00;
+  --darkblue-text: #2b4494;
+
+  /* Border Color */
+  --light-border: #eeeeee;
+  --blue-grey: ##7f7f7f;
+
+  /* Error Color */
+  --error-text: #ff0000;
+  --light-red: #ff8682;
+  --offline-table: #0688ff;
+  --notes-back: #f3f3f3;
+  /*----Footer Copy Right----*/
+  --footercopy-right: #027b9a;
+  /* Contact us page describtion */
+  --color-dis: #1abc9c;
+  /*Navbaar heading text color--*/
+  --nav-Txt: #7c7c7d;
+}
+
+a {
+  text-decoration: none;
+}
